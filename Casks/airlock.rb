@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.5"
-  sha256 "99630d2eda6a14d58a257d2b05f278fb639adc739451ef6bb53e85ab9529733d"
+  version "0.1.6"
+  sha256 "7b7234e5f2dd20843fa968065ee2306f5ee37e3e3efcc3c9d7033f1424eebc14"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.5/Airlock-0.1.5-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.6/Airlock-0.1.6-universal.dmg"
   name "Airlock"
   desc "Local-first Git proxy that transforms AI-generated code into clean PRs"
   homepage "https://github.com/airlock-hq/airlock"
