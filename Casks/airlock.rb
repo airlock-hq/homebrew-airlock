@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.7"
-  sha256 "4fb08d25ae71b8cbcc751c71173f7ace318a99dc310c7a3d77391ae5bc5df0f1"
+  version "0.1.8"
+  sha256 "b09deb294af1df23c7c9e65328431a9c0774afb770f228ae1be80e773f662770"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.7/Airlock-0.1.7-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.8/Airlock-0.1.8-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Local CI built for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
@@ -23,6 +23,9 @@ cask "airlock" do
   end
 
   uninstall_preflight do
+    system_command "#{appdir}/Airlock.app/Contents/MacOS/airlock",
+                  args: ["daemon", "stop"],
+                  must_succeed: false
     system_command "/bin/launchctl",
                   args: ["unload", "-w", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")],
                   must_succeed: false
