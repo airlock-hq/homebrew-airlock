@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.25"
-  sha256 "093aaaa660138d70fd90cd07ffacb92528a07697556e66e987375465f4ece288"
+  version "0.1.26"
+  sha256 "bda52c83cbf9bedb04ba03faa944ca8e32aa3177c6cc0565f5a8ef1fbb862ff6"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.25/Airlock-0.1.25-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.26/Airlock-0.1.26-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Local CI built for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
