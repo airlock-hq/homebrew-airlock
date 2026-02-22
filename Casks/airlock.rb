@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.16"
-  sha256 "0f5765597ca32af6dec0590c8548a6662bc2972334f1e5451df4a68215a1d9c6"
+  version "0.1.17"
+  sha256 "3db3dc9b3ba051690c05c0a4a78930a8b3b9ed24c824f5651a85b9c76149cc1d"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.16/Airlock-0.1.16-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.17/Airlock-0.1.17-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Local CI built for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
@@ -19,19 +19,17 @@ cask "airlock" do
     system_command "#{appdir}/Airlock.app/Contents/MacOS/airlock",
                   args: ["daemon", "install"]
     system_command "/bin/launchctl",
-                  args: ["load", "-w", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")]
+                  args: ["bootstrap", "gui/#{Process.uid}", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")]
   end
 
   uninstall_preflight do
     system_command "#{appdir}/Airlock.app/Contents/MacOS/airlock",
                   args: ["daemon", "stop"],
                   must_succeed: false
-    system_command "/bin/launchctl",
-                  args: ["unload", "-w", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")],
+    system_command "/bin/rm",
+                  args: ["-f", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")],
                   must_succeed: false
   end
-
-  uninstall delete: "~/Library/LaunchAgents/dev.airlock.daemon.plist"
 
   zap trash: "~/.airlock"
 end
