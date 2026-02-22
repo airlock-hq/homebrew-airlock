@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.19"
-  sha256 "72aeb5d4d99bafb88c415c23cf563ba736e610a755dff273db342e7248d21d1d"
+  version "0.1.20"
+  sha256 "481113ee9224a434877355378ae22ff56c16b57f66849866edaaf632380043ed"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.19/Airlock-0.1.19-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.20/Airlock-0.1.20-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Local CI built for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
@@ -18,8 +18,13 @@ cask "airlock" do
                   args: ["-cr", "#{appdir}/Airlock.app"]
     system_command "#{appdir}/Airlock.app/Contents/MacOS/airlock",
                   args: ["daemon", "install"]
+    # Clear any stale service registration before bootstrapping
     system_command "/bin/launchctl",
-                  args: ["bootstrap", "gui/#{Process.uid}", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")]
+                  args: ["bootout", "gui/#{Process.uid}/dev.airlock.daemon"],
+                  must_succeed: false
+    system_command "/bin/launchctl",
+                  args: ["bootstrap", "gui/#{Process.uid}", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")],
+                  must_succeed: false
   end
 
   uninstall_preflight do
