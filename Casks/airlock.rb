@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.22"
-  sha256 "3a42169bdb63a94a6c8fd3262a519907e61db6b4278c3d0b7216006ee6f8ca4a"
+  version "0.1.23"
+  sha256 "4cb55d29e2fb9238e60082d78b09f73d215c91e5fc74955260c80b334c179c78"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.22/Airlock-0.1.22-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.23/Airlock-0.1.23-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Local CI built for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
@@ -17,13 +17,7 @@ cask "airlock" do
     system_command "/usr/bin/xattr",
                   args: ["-cr", "#{appdir}/Airlock.app"]
     system_command "#{appdir}/Airlock.app/Contents/MacOS/airlock",
-                  args: ["daemon", "install"]
-    # Clear any stale service registration before bootstrapping
-    system_command "/bin/launchctl",
-                  args: ["bootout", "gui/#{Process.uid}/dev.airlock.daemon"],
-                  must_succeed: false
-    system_command "/bin/launchctl",
-                  args: ["bootstrap", "gui/#{Process.uid}", File.expand_path("~/Library/LaunchAgents/dev.airlock.daemon.plist")],
+                  args: ["daemon", "install"],
                   must_succeed: false
   end
 
