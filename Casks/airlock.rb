@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.39"
-  sha256 "eec503c2f1d5dc6a9f80ed8222e4f649c5f55c945d0a5ffd25fd029517af06f5"
+  version "0.1.40"
+  sha256 "73a73c49d95c1c31fd9d732942cdcf8184f3a835c027f74164a9586a638dd79b"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.39/Airlock-0.1.39-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.40/Airlock-0.1.40-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Self-healing local CI for high-velocity agentic engineering."
   homepage "https://github.com/airlock-hq/airlock"
