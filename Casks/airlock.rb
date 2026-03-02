@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.46"
-  sha256 "292f78a9357e3582cbbde338c123cf5e02b801b5ab66c7517a8c94ac746d86df"
+  version "0.1.47"
+  sha256 "cc5687e96d34418e1d3db8378f400ba51f36d3ec0e7b6e1256212783502e0d31"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.46/Airlock-0.1.46-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.47/Airlock-0.1.47-universal.dmg"
   name "Airlock"
   desc "Vibe code in. Clean PR out. Airlock is where every git push turns into a slop-free PR."
   homepage "https://github.com/airlock-hq/airlock"
