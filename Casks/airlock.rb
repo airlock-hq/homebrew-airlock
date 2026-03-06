@@ -1,8 +1,8 @@
 cask "airlock" do
-  version "0.1.52"
-  sha256 "0566cb9b895715ca4fdeb35bfa59ec368b4939f9e5cdbc625ee250bcc9478dd4"
+  version "0.1.53"
+  sha256 "65e9b10792c3a0e223d8fceb4f1f1b90446a6e07ee4066377bd6061c18ef25dd"
 
-  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.52/Airlock-0.1.52-universal.dmg"
+  url "https://github.com/airlock-hq/airlock/releases/download/airlock-v0.1.53/Airlock-0.1.53-universal.dmg"
   name "Airlock"
   desc "All slop must die. Airlock is where every git push turns into a slop-free PR."
   homepage "https://github.com/airlock-hq/airlock"
